@@ -1,0 +1,1 @@
+TRAINED_MODEL = 'data/model_config.keras'
