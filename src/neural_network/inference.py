@@ -29,7 +29,7 @@ class NeuralNetwork:
         self._x_functional_transform.fit(df)
         df = self._x_functional_transform.transform(df)
         predict = self._nn.predict(df, verbose=0)
-        return self._y_scaler.inverse_transform(predict).tolist()
+        return self._y_scaler.inverse_transform(predict).reshape(1, -1).tolist()
 
     @staticmethod
     def _load_polynomial(path: str):

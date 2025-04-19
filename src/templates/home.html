@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> WebApp Main Page </title>
+    </head>
+  <body>
+    <h2>Use trained neural network configs for predicting targets</h2>
+    <h3>Running local server:</h3>
+    <p>First run local server:</p>
+    <pre><code>python server.py</code></pre>
+    <p>this command start Uvicorn <em>local server</em> at <em>port 5000</em>. Also, server.py contains business logic for handling:</p>
+    <ol>
+      <li>GET '/' request - this endpoint returns HTML with this README.md,</li>
+      <li>GET '/func' - this endpoint returns the neural network prediction based on the passed URL parameters,</li>
+      <li>POST '/func' - this endpoint returns the neural network prediction based on the data from JSON request body.</li>
+    </ol>
+    <h3>Sending requests</h3>
+    <p>Using python script <strong>client.py</strong>:</p>
+    <pre><code>python client.py</code></pre>
+    <p>next you can choose from three options:</p>
+    <ol>
+      <li><em>home</em> - for receiving home page '/' with GET request,</li>
+      <li><em>vector</em> - for sending one feature vector with GET request on endpoint 'func/' and receiving prediction as text/plain response, feature vector can be specified as follows:</li>
+    </ol>
+    <pre><code>x1=0.1, x3=-1.1, x2=0.02, x4=0</code></pre>
+    <p>after what the GET request <a href="http://127.0.0.1:5000/func?x1=0.1&x3=-1.1&x2=0.02&x4=0">http://127.0.0.1:5000/func?x1=0.1&x3=-1.1&x2=0.02&x4=0</a> will be sent,</p>
+      <li><em>matrix</em> - for sending multiple feature vectors with POST request on endpoint 'func/' and receiving predictions as application/json response, for more details see realization in the <strong>client.py</strong>, feature matrix can be specified as follows:</li>
+    </ol>
+    <pre><code>[[2.647, 2.144, 0.112, 6.978], [0.4, -2.1, 0.07, -0.9]]</code></pre>
+    <p>after what the POST request <a href="http://127.0.0.1:5000/func">http://127.0.0.1:5000/func</a> will be sent.</p>
+
+  </body>
+
+</html>
