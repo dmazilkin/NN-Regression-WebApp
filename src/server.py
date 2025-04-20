@@ -1,6 +1,5 @@
 import uvicorn
 import asyncio
-from time import sleep
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import JSONResponse, HTMLResponse, PlainTextResponse
