@@ -1,9 +1,7 @@
 import json
-import numpy as np
 import pandas as pd
 from keras.api.saving import load_model
 from keras import Sequential
-from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import MinMaxScaler, PolynomialFeatures, FunctionTransformer
 
 from .helpers.preprocess_data import transform_sin
